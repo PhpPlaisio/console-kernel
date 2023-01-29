@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Plaisio\Console\Command;
 
-use Plaisio\Console\Helper\ClassHelper;
+use Plaisio\Console\Helper\Kernel\ClassHelper;
 use Plaisio\Console\Helper\TwoPhaseWrite;
 use Plaisio\PlaisioKernel;
 use SetBased\Helper\Cast;

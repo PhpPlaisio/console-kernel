@@ -1,0 +1,9 @@
+<kernel>
+    <properties>
+        <property>
+            <type>\NoSuchVendor\Awesome</type>
+            <name>awesome</name>
+            <description>An awesome property.</description>
+        </property>
+    </properties>
+</kernel>

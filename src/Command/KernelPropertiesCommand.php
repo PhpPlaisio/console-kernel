@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace Plaisio\Console\Command;
 
-use Plaisio\Console\Helper\ClassHelper;
-use Plaisio\Console\Helper\PlaisioXmlHelper;
-use Plaisio\Console\Helper\PlaisioXmlUtility;
+use Plaisio\Console\Helper\Kernel\ClassHelper;
+use Plaisio\Console\Helper\Kernel\PlaisioXmlQueryHelper;
+use Plaisio\Console\Helper\PlaisioXmlPathHelper;
 use Plaisio\Console\Helper\TwoPhaseWrite;
 use Plaisio\PlaisioKernel;
 use SetBased\Exception\RuntimeException;
@@ -79,9 +79,14 @@ class KernelPropertiesCommand extends PlaisioCommand
   {
     $key = ClassHelper::classDeclarationLine($lines, 'PlaisioKernel');
 
-    if ($key<2 || $lines[$key - 1]!=' */')
+    if ($key<=2 || ($lines[$key - 1]!==' */' && $lines[$key - 1]!=='#[\AllowDynamicProperties]'))
     {
       throw new RuntimeException('Unable to add property');
+    }
+
+    if ($lines[$key - 1]!=='#[AllowDynamicProperties]')
+    {
+      $key = $key - 1;
     }
 
     if ($lines[$key - 2]!==' *')
@@ -116,13 +121,13 @@ class KernelPropertiesCommand extends PlaisioCommand
    */
   private function collectProperties(): array
   {
-    $files = PlaisioXmlUtility::findPlaisioXmlAll('kernel');
+    $files = PlaisioXmlPathHelper::findPlaisioXmlAll('kernel');
 
     $properties = [];
 
     foreach ($files as $file)
     {
-      $config = new PlaisioXmlHelper($file);
+      $config = new PlaisioXmlQueryHelper($file);
 
       $properties = array_merge($properties, $config->queryKernelProperties());
     }

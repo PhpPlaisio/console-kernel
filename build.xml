@@ -1,6 +1,4 @@
 <project name="PhpPlaisio" default="build" basedir=".">
-    <property name="VERSION" value="0.0.0"/>
-
     <!-- Update dependencies -->
     <target name="update">
         <exec executable="composer" checkreturn="true" passthru="true">
@@ -8,7 +6,6 @@
             <arg value="update"/>
         </exec>
 
-        <phing phingfile="build.xml" target="code-generation" haltonfailure="true"/>
         <phing phingfile="build.xml" target="outdated" haltonfailure="true"/>
     </target>
 
@@ -19,7 +16,6 @@
             <arg value="install"/>
         </exec>
 
-        <phing phingfile="build.xml" target="code-generation" haltonfailure="true"/>
         <phing phingfile="build.xml" target="outdated" haltonfailure="true"/>
     </target>
 
@@ -32,20 +28,24 @@
         </exec>
     </target>
 
-    <target name="code-generation">
-        <exec executable="bin/stratum" checkreturn="true" passthru="true">
-            <arg value="--ansi"/>
-            <arg value="stratum"/>
-            <arg value="etc/stratum-assets.ini"/>
-        </exec>
+    <target name="cleanup">
+        <delete dir="vendor/no-such-vendor" quiet="true"/>
+        <delete file="plaisio-stratum.xml" quiet="true"/>
+        <delete file="stratum.ini" quiet="true"/>
     </target>
 
     <!-- Runs all unit tests -->
-    <target name="unit">
+    <target name="unit" depends="cleanup">
+        <copy todir="vendor/no-such-vendor" includeemptydirs="true" verbose="false" preservelastmodified="true">
+            <fileset dir="test/Command/no-such-vendor/">
+                <include name="**"/>
+            </fileset>
+        </copy>
+        <copy todir="." file="test/plaisio-stratum.xml" verbose="false"/>
+        <copy todir="." file="test/stratum.ini" verbose="false"/>
         <exec executable="bin/phpunit" passthru="true" checkreturn="true"/>
+        <phing phingfile="build.xml" target="cleanup" haltonfailure="true"/>
     </target>
 
-    <target name="build" depends="update,unit">
-        <echo message=""/>
-    </target>
+    <target name="build" depends="update,unit"/>
 </project>
