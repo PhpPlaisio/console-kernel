@@ -16,11 +16,10 @@
 <a href="https://gitter.im/PhpPlaisio/PhpPlaisio"><img src="https://badges.gitter.im/PhpPlaisio/PhpPlaisio.svg" alt="Gitter"/></a>
 </td>
 <td>
-<a href="https://packagist.org/packages/plaisio/console
-"><img src="https://poser.pugx.org/plaisio/console-kernel/license" alt="License"/></a>
+<a href="https://packagist.org/packages/plaisio/console-kernel"><img src="https://poser.pugx.org/plaisio/console-kernel/license" alt="License"/></a>
 </td>
 <td>
-<a href="https://packagist.org/packages/plaisio/console"><img src="https://poser.pugx.org/plaisio/console-kernel/v/stable" alt="Latest Stable Version"/></a><br/>
+<a href="https://packagist.org/packages/plaisio/console-kernel"><img src="https://poser.pugx.org/plaisio/console-kernel/v/stable" alt="Latest Stable Version"/></a><br/>
 </td>
 <td>
 <a href="https://github.com/PhpPlaisio/console-kernel/actions/workflows/unit.yml"><img src="https://github.com/PhpPlaisio/console-kernel/actions/workflows/unit.yml/badge.svg" alt="Build Status"/></a><br/>
