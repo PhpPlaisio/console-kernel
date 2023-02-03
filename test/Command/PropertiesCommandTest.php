@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Plaisio\Console\Test\Command;
+namespace Plaisio\Console\Kernel\Test\Command;
 
 use PHPUnit\Framework\TestCase;
 use Plaisio\Console\Application\PlaisioApplication;
@@ -9,11 +9,11 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Tester\ApplicationTester;
 
 /**
- * Testcases for class KernelPropertiesCommand, KernelPropertyReadWriteCommand, and
+ * Testcases for class PropertiesCommand, PropertyReadWriteCommand, and
  *
  *
  */
-class KernelPropertiesCommandTest extends TestCase
+class PropertiesCommandTest extends TestCase
 {
   //--------------------------------------------------------------------------------------------------------------------
   /**

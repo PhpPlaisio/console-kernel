@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Plaisio\Console\Helper\Kernel;
+namespace Plaisio\Console\Kernel\Helper;
 
 use Plaisio\Console\Exception\ConfigException;
 

@@ -1,5 +1,5 @@
 <commands>
-    <command name="plaisio:kernel-data-layer-type">\Plaisio\Console\Command\KernelDataLayerTypeCommand</command>
-    <command name="plaisio:kernel-properties">\Plaisio\Console\Command\KernelPropertiesCommand</command>
-    <command name="plaisio:kernel-property-read-write">\Plaisio\Console\Command\KernelPropertyReadWriteCommand</command>
+    <command name="plaisio:kernel-data-layer-type">\Plaisio\Console\Kernel\Command\DataLayerTypeCommand</command>
+    <command name="plaisio:kernel-properties">\Plaisio\Console\Kernel\Command\PropertiesCommand</command>
+    <command name="plaisio:kernel-property-read-write">\Plaisio\Console\Kernel\Command\PropertyReadWriteCommand</command>
 </commands>

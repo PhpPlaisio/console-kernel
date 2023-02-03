@@ -1,10 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace Plaisio\Console\Command;
+namespace Plaisio\Console\Kernel\Command;
 
-use Plaisio\Console\Helper\Kernel\ClassHelper;
+use Plaisio\Console\Command\PlaisioCommand;
 use Plaisio\Console\Helper\TwoPhaseWrite;
+use Plaisio\Console\Kernel\Helper\ClassHelper;
 use Plaisio\PlaisioKernel;
 use SetBased\Helper\Cast;
 use Symfony\Component\Console\Input\InputArgument;
@@ -14,7 +15,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 /**
  * Command for make a property in the kernel read/write (i.e. class \Plaisio\Kernel\Nub).
  */
-class KernelPropertyReadWriteCommand extends PlaisioCommand
+class PropertyReadWriteCommand extends PlaisioCommand
 {
   //--------------------------------------------------------------------------------------------------------------------
   /**

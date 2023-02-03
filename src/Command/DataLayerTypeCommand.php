@@ -1,12 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace Plaisio\Console\Command;
+namespace Plaisio\Console\Kernel\Command;
 
 use Noodlehaus\Config;
-use Plaisio\Console\Helper\Kernel\PlaisioXmlQueryHelper;
+use Plaisio\Console\Command\PlaisioCommand;
 use Plaisio\Console\Helper\PlaisioXmlPathHelper;
 use Plaisio\Console\Helper\TwoPhaseWrite;
+use Plaisio\Console\Kernel\Helper\PlaisioXmlQueryHelper;
 use Plaisio\PlaisioKernel;
 use SetBased\Config\TypedConfig;
 use SetBased\Helper\Cast;
@@ -17,7 +18,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 /**
  * Command for setting the type of the DataLayer in the kernel.
  */
-class KernelDataLayerTypeCommand extends PlaisioCommand
+class DataLayerTypeCommand extends PlaisioCommand
 {
   //--------------------------------------------------------------------------------------------------------------------
   /**

@@ -26,12 +26,12 @@
   },
   "autoload": {
     "psr-4": {
-      "Plaisio\\Console\\": "src/"
+      "Plaisio\\Console\\Kernel\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Plaisio\\Console\\Test\\": "test/"
+      "Plaisio\\Console\\Kernel\\Test\\": "test/"
     }
   },
   "bin": [
