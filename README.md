@@ -23,7 +23,7 @@
 </td>
 <td>
 <a href="https://github.com/PhpPlaisio/console-kernel/actions/workflows/unit.yml"><img src="https://github.com/PhpPlaisio/console-kernel/actions/workflows/unit.yml/badge.svg" alt="Build Status"/></a><br/>
-<a href="https://codecov.io/gh/PhpPlaisio/console"><img src="https://codecov.io/gh/PhpPlaisio/console-kernel/branch/master/graph/badge.svg" alt="Code Coverage"/></a>
+<a href="https://codecov.io/gh/PhpPlaisio/console-kernel"><img src="https://codecov.io/gh/PhpPlaisio/console-kernel/branch/master/graph/badge.svg" alt="Code Coverage"/></a>
 </td>
 <td>
 <a href="https://scrutinizer-ci.com/g/PhpPlaisio/console-kernel/?branch=master"><img src="https://scrutinizer-ci.com/g/PhpPlaisio/console-kernel/badges/quality-score.png?b=master" alt="Scrutinizer Code Quality"/></a>
