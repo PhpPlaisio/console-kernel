@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace Plaisio\Console\Kernel\Helper;
 
 use Composer\Autoload\ClassLoader;
-use SetBased\Exception\RuntimeException;
+use Plaisio\Console\Exception\ConfigException;
 
 /**
  * Utility class for classes.
@@ -27,7 +27,7 @@ class ClassHelper
 
     if ($line===null)
     {
-      throw new RuntimeException('Unable to find declaration of class %s', $class);
+      throw new ConfigException('Unable to find declaration of class %s', $class);
     }
 
     return $line;
@@ -50,7 +50,7 @@ class ClassHelper
     $filename = $loader->findFile(ltrim($class, '\\'));
     if ($filename===false)
     {
-      throw new RuntimeException("ClassLoader can not find class '%s'", $class);
+      throw new ConfigException("ClassLoader can not find class '%s'", $class);
     }
 
     return realpath($filename);
@@ -73,7 +73,7 @@ class ClassHelper
 
     if ($line===null)
     {
-      throw new RuntimeException('Unable to find property %s', $name);
+      throw new ConfigException('Unable to find property %s', $name);
     }
 
     return $line;

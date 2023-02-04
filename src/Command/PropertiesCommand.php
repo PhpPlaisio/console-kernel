@@ -4,12 +4,12 @@ declare(strict_types=1);
 namespace Plaisio\Console\Kernel\Command;
 
 use Plaisio\Console\Command\PlaisioCommand;
+use Plaisio\Console\Exception\ConfigException;
 use Plaisio\Console\Helper\PlaisioXmlPathHelper;
 use Plaisio\Console\Helper\TwoPhaseWrite;
 use Plaisio\Console\Kernel\Helper\ClassHelper;
 use Plaisio\Console\Kernel\Helper\PlaisioXmlQueryHelper;
 use Plaisio\PlaisioKernel;
-use SetBased\Exception\RuntimeException;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
@@ -82,7 +82,7 @@ class PropertiesCommand extends PlaisioCommand
 
     if ($key<=2 || ($lines[$key - 1]!==' */' && $lines[$key - 1]!=='#[\AllowDynamicProperties]'))
     {
-      throw new RuntimeException('Unable to add property');
+      throw new ConfigException('Unable to add property');
     }
 
     if ($lines[$key - 1]!=='#[AllowDynamicProperties]')
