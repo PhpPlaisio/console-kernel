@@ -34,9 +34,6 @@
       "Plaisio\\Console\\Kernel\\Test\\": "test/"
     }
   },
-  "bin": [
-    "bin/plaisio"
-  ],
   "config": {
     "bin-dir": "bin/",
     "sort-packages": true,
