@@ -22,7 +22,7 @@ class PropertiesCommand extends PlaisioCommand
   /**
    * @inheritdoc
    */
-  protected function configure()
+  protected function configure(): void
   {
     $this->setName('plaisio:kernel-properties')
          ->setDescription('Adds properties to the kernel');

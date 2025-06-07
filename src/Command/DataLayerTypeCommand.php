@@ -24,13 +24,13 @@ class DataLayerTypeCommand extends PlaisioCommand
   /**
    * The declaration of the DataLayer.
    */
-  const PUBLIC_STATIC_DL = '/(?P<property>.*@property-read) (?P<class>.+) (?P<dl>\$DL) (?P<comment>.*)$/';
+  const string PUBLIC_STATIC_DL = '/(?P<property>.*@property-read) (?P<class>.+) (?P<dl>\$DL) (?P<comment>.*)$/';
 
   //--------------------------------------------------------------------------------------------------------------------
   /**
    * @inheritdoc
    */
-  protected function configure()
+  protected function configure(): void
   {
     $this->setName('plaisio:kernel-data-layer-type')
          ->setDescription(sprintf('Sets the type of the DataLayer in %s', PlaisioKernel::class))

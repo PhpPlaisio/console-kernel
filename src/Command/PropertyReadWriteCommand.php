@@ -21,7 +21,7 @@ class PropertyReadWriteCommand extends PlaisioCommand
   /**
    * @inheritdoc
    */
-  protected function configure()
+  protected function configure(): void
   {
     $this->setName('plaisio:kernel-property-read-write')
          ->setDescription('Makes a property of the kernel read/write')

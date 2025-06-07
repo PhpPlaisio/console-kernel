@@ -41,7 +41,8 @@ class PlaisioXmlQueryHelper extends \Plaisio\Console\Helper\PlaisioXmlQueryHelpe
   public function queryPhpStratumConfigFilename(): string
   {
     $xpath = new \DOMXpath($this->xml);
-    $node  = $xpath->query('/stratum/config')->item(0);
+    $node  = $xpath->query('/stratum/config')
+                   ->item(0);
 
     if ($node===null)
     {
